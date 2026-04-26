@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Google Fontsの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/* デフォルトフォントをInterに */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
