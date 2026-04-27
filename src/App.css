@@ -1,0 +1,18 @@
+/* index.css などに追加 */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 10px; /* 横スクロールバーの太さ（細めに設定） */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* バーの背景色（薄いグレー） */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* バー自体の色（slate-300くらい） */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* ホバーした時に少し濃くする */
+}
