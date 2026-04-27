@@ -6,8 +6,8 @@ const DecorativeArc = ({ position }: { position: 'left' | 'right' }) => {
   const isLeft = position === 'left';
   return (
     <div className={`
-      absolute top-1/2 -translate-y-1/2 
-      h-[80%] aspect-[1/2] 
+      absolute top-1/2 -translate-y-1/2
+      h-[70%] aspect-[1/2] 
       bg-[#F7931A]/10 -z-0
       ${isLeft ? 'left-0 rounded-r-full' : 'right-0 rounded-l-full'}
     `} />
@@ -20,7 +20,7 @@ const Hero = () => {
   const subTitleStyle = "text-[2vw] font-bold text-[#444444] mt-2";
 
   return (
-    <section className="relative top-[5vh] flex items-center justify-center w-full aspect-[16/9] overflow-hidden px-[10vw]">
+    <section className="relative flex items-center justify-center w-screen aspect-[16/9] overflow-hidden px-[10vw]">
     {/* ヒーローセクション */}
       {/* 背景装飾 */}
       <DecorativeArc position="left" />
@@ -29,7 +29,7 @@ const Hero = () => {
       {/* コンテンツエリア */}
       <div className="flex items-center justify-between w-full z-10">
         {/* 左側：テキスト情報 */}
-        <div className="flex-1">
+        <div className="flex-1 ">
           <h1 className={heroTitleStyle}>
             Hanz <span className='text-[#FF8C00]'>ON</span>
           </h1>
@@ -39,7 +39,7 @@ const Hero = () => {
         </div>
 
         {/* 右側：メインロゴ画像 */}
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 flex justify-end h-[35vw]">
           <div className="w-full aspect-square">
             <img src={citelogo} alt="Cite Logo" className="w-full h-full object-contain" />
           </div>
