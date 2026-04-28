@@ -1,5 +1,5 @@
 import React from 'react';
-import citelogo from '../assets/Hanz-on.webp';
+import citelogo from '../../assets/Hanz-on.webp';
 
 // 1. 装飾用パーツ（Appの外に置くことで、Appがスッキリする）
 const DecorativeArc = ({ position }: { position: 'left' | 'right' }) => {

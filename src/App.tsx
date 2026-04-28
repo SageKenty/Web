@@ -1,23 +1,19 @@
-import './App.css';
-import React,{useState,useRef,useEffect} from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Works from './components/Works';
-import Blog from './components/Blog';
-
+import Header from './components/layout/Header';
+import Hero from './components/sections/Hero';
+import PortfolioSection from './components/sections/Works';
+import BlogSection from './components/sections/Blog';
 
 function App() {
-    
   return (
-    <>
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
-      <main className="pt-10 w-screen">
+      <main>
         <Hero />
-        <Works />
-        <Blog />
-
+        <PortfolioSection />
+        <BlogSection />
+        
       </main>
-    </>
+    </div>
   );
 }
 
