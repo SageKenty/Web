@@ -12,6 +12,13 @@ interface PortfolioItem {
   link: string;
 }
 
+const portfolioData: PortfolioItem[] = [
+  { id: 1, tag: "Web Design", title: "Firebit Project", desc: "", status: "Completed", img: firebit, link: "https://example.com" },
+  { id: 2, tag: "App Dev", title: "Second Work", desc: "Figmaから逆算中。", status: "In Progress", img: firebit, link: "https://example.com" },
+  { id: 3, tag: "UI/UX", title: "Third Work", desc: "ポートフォリオ欄。", status: "Completed", img: firebit, link: "https://example.com" },
+  { id: 4, tag: "Blockchain", title: "Fourth Work", desc: "Proof of Work.", status: "Completed", img: firebit, link: "https://example.com" },
+];
+
 // 2. 内部で使うサブコンポーネント（メイン関数の「外」に置く）
 // メインコンポーネントから独立させることで、再レンダリングを最適化できます。
 const PortfolioCard = ({ item }: { item: PortfolioItem }) => {
@@ -41,13 +48,6 @@ const PortfolioCard = ({ item }: { item: PortfolioItem }) => {
 
 // 3. メインコンポーネント（これをexportする）
 export default function PortfolioSection() {
-  // データもここに置いておくと管理しやすい（またはファイルの一番上に置く）
-  const portfolioData: PortfolioItem[] = [
-    { id: 1, tag: "Web Design", title: "Firebit Project", desc: "説明文が入ります。", status: "Completed", img: firebit, link: "https://example.com" },
-    { id: 2, tag: "App Dev", title: "Second Work", desc: "Figmaから逆算中。", status: "In Progress", img: firebit, link: "https://example.com" },
-    { id: 3, tag: "UI/UX", title: "Third Work", desc: "ポートフォリオ欄。", status: "Completed", img: firebit, link: "https://example.com" },
-    { id: 4, tag: "Blockchain", title: "Fourth Work", desc: "Proof of Work.", status: "Completed", img: firebit, link: "https://example.com" },
-  ];
 
   return (
     <section id="Works" className="w-full">
