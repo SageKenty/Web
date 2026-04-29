@@ -16,3 +16,17 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #94a3b8; /* ホバーした時に少し濃くする */
 }
+
+.gold-text {
+  background: linear-gradient(
+    45deg,
+    #b67b03 0%,
+    #daaf08 45%,
+    #fee9a0 70%,
+    #daaf08 85%,
+    #b67b03 100%
+  );
+  /* テキストに適用する場合 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
