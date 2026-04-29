@@ -7,7 +7,16 @@ interface SkillGraphProps {
   // ここに必要なpropsを定義できます（例: skillsのデータなど）
 }
 
-const SkillGraph = ({}: SkillGraphProps) => {
+const skills: { label: string; rank: string }[] = [
+    { label: "Passion", rank: "S" },
+    { label: "Relation", rank: "B" },
+    { label: "Research", rank: "B" },
+    { label: "Obstinacy", rank: "F" },
+    { label: "Develop", rank: "C" },
+  ];
+
+
+export const SkillGraph = ({}: SkillGraphProps) => {
   // --- データ定義 ---
 
   const rankColors: {[key: string] : string} = {
@@ -33,14 +42,6 @@ const SkillGraph = ({}: SkillGraphProps) => {
     F: 0.3,
     G: 0.2,
   };
-
-  const skills: { label: string; rank: string }[] = [
-    { label: "Passion", rank: "S" },
-    { label: "Relation", rank: "B" },
-    { label: "Research", rank: "B" },
-    { label: "Obstinacy", rank: "F" },
-    { label: "Develop", rank: "C" },
-  ];
 
   // --- 座標計算関数 (前回と同じ) ---
   const getCoordinates = (value: number, index: number) => {
@@ -96,7 +97,7 @@ const SkillGraph = ({}: SkillGraphProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center text-white min-h-screen ">
+    <div className="flex flex-col items-center text-white">
       <div className="text-center">
         <h3 className="text-[1.5vw] font-black  trackin-widest text-slate-400">Skill Graph</h3>
         <h3 className={`text-[2vw] font-black mb-[2vw] trackin-widest text-[${colors.primary}]`}>直感能力値グラフ</h3>
@@ -176,5 +177,3 @@ const SkillGraph = ({}: SkillGraphProps) => {
     </div>
   );
 };
-
-export default SkillGraph;

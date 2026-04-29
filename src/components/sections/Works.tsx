@@ -65,7 +65,7 @@ const PortfolioCard = ({ item }: { item: PortfolioItem }) => {
 
 export default function PortfolioSection() {
   return (
-    <section id="Works" className={`w-full ${DESIGN.layout.sectionPadding}`}>
+    <section id="works" className={`w-full ${DESIGN.layout.sectionPadding}`}>
       <div className={`${DESIGN.layout.containerMargin} px-6`}>
         <SectionHeader title="Proof Of Work" subTitle="制作事例" />
         <div className="flex flex-nowrap overflow-x-auto gap-[2vw] pb-[2vw] snap-x touch-pan-x custom-scrollbar">

@@ -38,7 +38,7 @@ export const SKILL_ICONS: Record<string, React.ReactNode> = {
   ),
 
   js: (
-    <p className = "font-black">JS</p>
+    <p className = "font-black text-[2vw]">JS</p>
   ),
   react : (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

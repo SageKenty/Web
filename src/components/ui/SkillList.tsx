@@ -4,7 +4,6 @@ import { SKILL_ICONS } from '../../constants/icons';
 
 const colors = DESIGN.colors;
 
-// データをコンポーネント内に閉じ込める（または別ファイルからimport）
 const skills = [
   { name: "Network", level: 2.5, color: "#0067C0", logoId: "network"},
   { name: "Security", level: 2.8, color: "#1e40af", logoId: "security"},
@@ -16,44 +15,63 @@ const skills = [
 
 export const SkillList = () => {
   return (
-    <div className="w-[28vw] mx-auto space-y-[1vw]">
-      {/* タイトル部分 */}
-      <div className="text-center mb-[2vw]">
-        <h3 className="text-[1.5vw] font-black tracking-widest text-slate-400">Skill Levels</h3>
-        <h3 className={`text-[2vw] font-black tracking-widest text-[${colors.primary}]`}>スキルレベル</h3>
-        <p className="text-[1.0vw] font-medium tracking-widest text-slate-400">
-          ※<a href="#" className="text-blue-900 hover:underline">ITFS</a>を参照。Max L.5。
-        </p>
+    <div className="w-[35vw] mx-auto space-y-[1vw]">
+      {/*スキルリスト*/}
+      <div className="text-center  mb-[2vw]">
+        {/*スキルリストのタイトル */}
+       <h3 className="text-[1.5vw] font-black  trackin-widest text-slate-400">Skill Levels</h3>
+        <h3 className={`text-[2vw] font-black trackin-widest text-[${colors.primary}]`}>スキルレベル</h3>
+        <p className = "text-[1.0vw] font-midium trackin-widest text-slate-400">※<a href = "https://example.com" className = "text-blue-900 hover:underline">ITFS</a>を参照。本ブログではMax値をL.5に設定。</p>
+        <a href="https:/example.com" className = "text-[1.0vw] font-midium trackin-widest text-blue-900 hover:underline">判定方法についてはこちらのページから</a>
       </div>
-
       {skills.map((skill, index) => (
-        <div key={skill.name} className="relative">
-          {/* ロゴ・バー・レベルの描画ロジック（中身はそのまま移動） */}
+        <div key={index} className="relative">
+          {/* ロゴと名前 */}
           <div className="flex items-center gap-[1vw] mb-[0.5vw]">
             <div 
-              className="flex items-center justify-center w-[2vw] h-[2vw]"
-              style={{ filter: `drop-shadow(0 0 0.5vw ${skill.color})`, color: skill.color }}
-            >
-              <div className="w-[2vw] aspect-square fill-current">
-                {SKILL_ICONS[skill.logoId] || "❓"}
+                className="flex items-center justify-center w-[2vw] h-[2vw]"
+                style={{ 
+                  filter: `drop-shadow(0 0 0.5vw ${skill.color})`,
+                  color: skill.color // SVGのfill-currentやテキストに色が乗るように
+                }}
+              >
+                {/* 渡されたのが何であれ、そのまま表示するだけ */}
+                <div className = "w-[2vw] aspect-square fill-current">
+                  { SKILL_ICONS[skill.logoId] || "❓"}
+                </div>
               </div>
-            </div>
-            <span className="text-[1.2vw] font-bold tracking-tight" style={{ color: skill.color }}>
+            <span 
+              className="text-[1.2vw] font-bold tracking-tight"
+              /* 名前も少しだけその色を混ぜるとネオン感が増します */
+              style={{ color: skill.color }}
+            >
               {skill.name}
             </span>
           </div>
 
+          {/* バーの背景 */}
           <div className="h-[1vw] bg-slate-100 rounded-full overflow-hidden relative">
+            {/* 動くアニメーションバー */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: `${(skill.level / 5) * 100}%` }}
               viewport={{ once: true }}
+              //duration: 1.5秒、easeOut、遅延はスキルごとに0.1秒ずつ増加
               transition={{ duration: 1.5, ease: "easeOut", delay: index * 0.1 }}
-              style={{ backgroundColor: skill.color }}
-              className="h-full rounded-full shadow-[0_0_15px_rgba(255,140,0,0.8)]"
+              style={{ 
+                backgroundColor: skill.color,
+                boxShadow: `0 0 10px ${skill.color}80` 
+              }}
+              className={`h-full rounded-full /* 外側の光 */
+              shadow-[0_0_15px_rgba(0.8),0_0_30px_${skill.color}/80] /* 外側の強い光 */
+              /* 内側の光 */
+              inset-shadow-[0_0_10px_${skill.color}/50]
+              /* テキストの光 */
+              drop-shadow-[0_0_10px_${skill.color}]`}
             />
           </div>
 
+          {/* レベル表示 (バーの右端付近に絶対配置) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}

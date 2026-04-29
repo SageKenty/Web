@@ -30,7 +30,7 @@ const BlogItem = ({ blog }: { blog: BlogItem }) => (
 
 export default function BlogSection() {
   return (
-    <section id="Blog" className={`w-full ${DESIGN.layout.sectionPadding}`}>
+    <section id="blog" className={`w-full ${DESIGN.layout.sectionPadding}`}>
       <div className={`${DESIGN.layout.containerMargin} px-6`}>
         <SectionHeader title="Training Log" subTitle="ブログ" />
         <div className={`flex flex-col border-t ${DESIGN.colors.borderBase}`}>

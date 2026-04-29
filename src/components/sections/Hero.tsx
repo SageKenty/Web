@@ -20,7 +20,7 @@ const Hero = () => {
   const subTitleStyle = "text-[2vw] font-bold text-[#444444] mt-2";
 
   return (
-    <section id="Home" className="relative flex items-center justify-center w-screen aspect-[16/9] overflow-hidden px-[10vw]">
+    <section id="home" className="relative flex items-center justify-center w-screen aspect-[16/9] overflow-hidden px-[10vw]">
     {/* ヒーローセクション */}
       {/* 背景装飾 */}
       <DecorativeArc position="left" />
