@@ -25,13 +25,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full py-[3vw] px-[4vw] border-t border-gray-200 bg-white">
+    <footer className="w-full py-[3vw] px-[4vw] my-[5vw] border-t border-gray-200 bg-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         
         {/* ロゴセクション */}
         <div className="flex items-center">
           <div className="text-2xl font-black tracking-tighter">
-            MY SITE<span className="text-orange-500">.</span>
+            Hanz <span className={`text-[${DESIGN.colors.primary}]`}>ON</span>
           </div>
         </div>
 
@@ -67,7 +67,7 @@ const Footer = () => {
 
       {/* コピーライト（おまけ） */}
       <div className="mt-12 text-center text-[10px] text-gray-400 tracking-widest uppercase">
-        © {new Date().getFullYear()} Kento. All rights reserved.
+        © {new Date().getFullYear()} Sekigawa Kento. All rights reserved.
       </div>
     </footer>
   );

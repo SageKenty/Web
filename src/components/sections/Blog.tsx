@@ -1,6 +1,7 @@
 import { DESIGN } from '../../constants/design';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Badge } from '../ui/Badge';
+import { ArrowRight } from 'lucide-react'; // 矢印アイコン
 
 interface BlogItem {
   id: number;
@@ -18,23 +19,74 @@ const blogData = [
 ];
 
 const BlogItem = ({ blog }: { blog: BlogItem }) => (
-  <a href={`/blog/${blog.id}`} className={`flex items-center py-[1.5vw] border-b ${DESIGN.colors.borderLight} ${DESIGN.colors.bgHover} transition-colors group`}>
-    <span className="w-[10vw] text-[1.2vw] text-slate-400 font-mono">{blog.date}</span>
-    <Badge text={blog.tag} />
-    <h3 className={`flex-1 text-[1.5vw] font-medium ${DESIGN.colors.textMain} group-hover:text-orange-600 transition-colors truncate`}>
+  <a 
+    href={`/blog/${blog.id}`} 
+    className={`
+      flex flex-col md:flex-row md:items-center 
+      py-5 md:py-[1.5vw] 
+      border-b ${DESIGN.colors.borderLight} 
+      ${DESIGN.colors.bgHover} transition-all group
+    `}
+  >
+    {/* --- メタ情報エリア (日付・タグ) --- */}
+    <div className="flex items-center gap-3 mb-2 md:mb-0 md:w-[22vw] shrink-0">
+      {/* 日付：スマホではさらに小さく(xs)、PCではvw */}
+      <span className="text-xs md:text-[1.2vw] text-slate-400 font-mono w-20 md:w-[10vw]">
+        {blog.date}
+      </span>
+      {/* タグ：Badgeのサイズ感はUI側にお任せ */}
+      <Badge text={blog.tag} />
+    </div>
+
+    {/* --- タイトルエリア --- */}
+    {/* md:ml-4 でPC時に少し間隔を空ける。truncateを外し、改行を許可 */}
+    <h3 className={`
+      flex-1 text-base md:text-[1.5vw] font-bold 
+      ${DESIGN.colors.textMain} group-hover:text-orange-600 
+      transition-colors leading-snug break-words md:pr-4
+    `}>
       {blog.title}
     </h3>
-    <span style={{ color: DESIGN.colors.primary }} className="group-hover:translate-x-1 transition-transform">→</span>
+
+    {/* --- アイコン --- */}
+    {/* スマホでは省略(hidden)、PCのみ表示 */}
+    <span 
+      style={{ color: DESIGN.colors.primary }} 
+      className="hidden md:block group-hover:translate-x-1 transition-transform"
+    >
+      →
+    </span>
   </a>
 );
 
 export default function BlogSection() {
   return (
     <section id="blog" className={`w-full ${DESIGN.layout.sectionPadding}`}>
-      <div className={`${DESIGN.layout.containerMargin} px-6`}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-[10vw]">
         <SectionHeader title="Training Log" subTitle="ブログ" />
-        <div className={`flex flex-col border-t ${DESIGN.colors.borderBase}`}>
-          {blogData.map((blog) => <BlogItem key={blog.id} blog={blog} />)}
+        
+        <div className={`flex flex-col border-t ${DESIGN.colors.borderBase} mt-8`}>
+          {blogData.map((blog) => (
+            <BlogItem key={blog.id} blog={blog} />
+          ))}
+        </div>
+
+        {/* --- View ALL ボタン (PC・スマホ両方) --- */}
+        <div className="mt-10 md:mt-12 flex justify-center">
+          <a 
+            href="/blog"
+            className="
+              flex items-center gap-2 
+              px-10 py-4 
+              bg-slate-900 text-white 
+              rounded-full font-black text-sm md:text-base
+              shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5
+              active:scale-95 transition-all
+            "
+          >
+            View ALL LOGS
+            <ArrowRight size={18} />
+          </a>
         </div>
       </div>
     </section>
