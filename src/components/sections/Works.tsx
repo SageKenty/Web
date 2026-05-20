@@ -90,6 +90,7 @@ const PortfolioCard = ({ item, index }: { item: PortfolioItem; index: number }) 
         overflow-hidden
         shadow-[4px_4px_0px_rgba(0,0,0,0.1)] md:shadow-[6px_6px_0px_rgba(0,0,0,0.15)]
         transition-all duration-200 active:scale-[0.98]
+        hover:translate-x-0 hover:translate-y-0 hover:shadow-none transition-all duration-150
       `}
     >
       {/* 🖼 画像エリア：ここが修正ポイント！ */}

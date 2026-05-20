@@ -2,17 +2,11 @@ import React, { useState } from 'react';
 import { DESIGN } from '../../constants/design';
 import logoImg from '../../assets/Hanz-on_50.webp'; 
 import { Menu, X } from 'lucide-react'; // アイコンライブラリ（lucide-react）を想定。なければ三本線で代用可
+import {NAV_ITEMS} from '../../constants/navigation';
+import {NavLink} from '../ui/NavLink';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // メニューの開閉状態
-
-  const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Works', href: '#works' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'About', href: '#about' },
-    { name: 'Skill', href: '#skill' }
-  ];
 
   // 1vwはスマホだと小さすぎるため、高さなどはモバイル用に固定値(h-16など)を混ぜるのがコツです
   return (
@@ -33,21 +27,9 @@ const Header = () => {
       {/* --- PC Navbar (md以上で表示) --- */}
       <nav className="hidden md:block">
         <ul className="flex items-center space-x-[3vw]">
-          {menuItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <li key={item.name}>
-              <a 
-                href={item.href} 
-                className={`
-                  relative py-[0.5vw] text-[1.5vw] font-bold text-gray-500 transition-all duration-300
-                  hover:text-[${DESIGN.colors.accent}] 
-                  /* 下線のエフェクト */
-                  after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
-                  after:transition-all after:duration-300 hover:after:w-full
-                  after:bg-[${DESIGN.colors.accent}]
-                `}
-                >
-                {item.name}
-              </a>
+              <NavLink item={item} className="text-[1.5vw]" />
             </li>
           ))}
         </ul>
@@ -68,15 +50,13 @@ const Header = () => {
         ${isOpen ? 'translate-x-0' : 'translate-x-full'}
       `}>
         <nav className="bg-white flex flex-col items-center pt-12 space-y-8 min-h-screen">
-          {menuItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-2xl font-bold text-gray-700 hover:text-blue-500 underline"
-              onClick={() => setIsOpen(false)} // リンククリックで閉じる
-            >
-              {item.name}
-            </a>
+          {NAV_ITEMS.map((item) => (
+            <NavLink 
+              key={item.name} 
+              item={item} 
+              className="text-2xl" 
+              onClick={() => setIsOpen(false)} 
+            />
           ))}
         </nav>
       </div>
