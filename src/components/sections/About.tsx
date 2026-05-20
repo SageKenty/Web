@@ -1,5 +1,5 @@
 import { SectionHeader } from "../ui/SectionHeader"
-import {DESIGN} from "../../constants/design"
+import { DESIGN } from "../../constants/design"
 import yourImage from "../../assets/Hanz-on.webp"
 
 // プロフィールの型定義
@@ -8,47 +8,59 @@ export interface ProfileItem {
   content: string;
 }
 
-// タイムラインの型定義
+// リンク個別の型定義
+export interface TimelineLink {
+  text: string;
+  url: string;
+}
+
+// タイムラインの型定義（linksを配列形式に拡張）
 export interface TimelineItemData {
   period: string;
   title: string;
   description: string;
+  links?: TimelineLink[]; // 複数のリンクを保持できる配列
 }
 
 export const PROFILE_DATA: ProfileItem[] = [
-  { label: "AGE / GENDER", content: "22歳 / 男性" },
   { label: "SPEC", content: "北九州市立大学 国際環境工学研究科 情報工学専攻 修士1年" },
-  { label: "COMMENT", content: "Blockchainをセキュリティ、ネットワークなど幅広い視点を持ちながら研究しています。ユーモアを大事にしつつ、実践学習、ハンズオンを大事にした学習に取り組む意図で少し誤字を入れたHanzOnを掲げてます。" },
+  { label: "COMMENT", content: "Blockchainをセキュリティ、ネットワークなど幅広い視点を持ちながら研究しています。あらゆることをやってみたいと考える関心の広さとあらゆる人と関わりたいと考える人当たりの良さが売りです。Webはもちろん、さまざまな技術やシステムに興味を持って取り組んでいます。現状大規模なシステム開発などに携わった経験はありませんが、実務に携わるときは一日でも早く戦力になれるように努力したいです。" },
 ];
 
 export const TIMELINE_DATA: TimelineItemData[] = [
   {
     period: "Coursework",
     title: "学部1-3年",
-    description: "基礎力や実装力を上げるために必死で実習や課題、プログラミングサークルでの活動に尽力しました。"
+    description: "基礎力や実装力を上げるために必死で実習や課題、プログラミングサークルでの活動に尽力しました。具体的にはシューティングゲームや将棋風ゲーム、ハッカソンなどに挑戦しました。",
+    links: [
+      { text: "プログラミングサークル PEACH", url: "https://peach-ktq.dev/" }
+    ]
   },
   {
     period: "Bachelor",
     title: "学士研究",
-    description: "情報指向ネットワーク(ICN)の信頼性をBlockchainで保つICNとDPKIの実装を行い。成果を2026年3月、IEICE総合大会学生ポスターセッションにて発表。ポスター優秀賞を受賞しました。"
+    description: "「ICNにおけるBlockchainを用いた分散型鍵管理手法に関する研究」古閑・伊藤研究室にて情報指向ネットワーク(ICN)の信頼性をBlockchainを使ったPKIシステム、DPKIで担保しようと試みる研究を行いました。概念実証のための実装実験を行い、成果を2026年3月、IEICE総合大会学生ポスターセッションにて発表。ポスター優秀賞を受賞しました。",
+    links: [
+      { text: "古閑・伊藤研究室 Webサイト", url: "https://kogalab.net/" },
+      { text: "IEICE 学生ポスターセッション受賞者一覧", url: "https://www.ieice.org/jpn_r/junior/poster_session_awards_2026.html" }
+    ]
   },
   {
     period: "Master",
     title: "修士研究",
-    description: " まだわかりませんが、Blockchainで何らかの社会貢献ができたらなと考えています。"
+    description: "Blockchainで何らかの社会貢献ができたらなと考えています。また、ICCE TWでの採択及び発表を目標にしています。"
   },
 ];
 
-const TimelineItem = ({ period, title, description }: TimelineItemData) => (
+const TimelineItem = ({ period, title, description, links }: TimelineItemData) => (
   <div className="relative pl-8 md:pl-[2.5vw] pb-10 md:pb-[3vw] last:pb-0 group">
-    {/* 垂直線：スマホでは固定幅(w-px)、PCではvwも可だがpxが安定 */}
+    {/* 垂直線 */}
     <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200 group-last:bottom-auto group-last:h-4" />
     
-    {/* ドット：スマホで小さくなりすぎないよう固定値をベースにする */}
+    {/* ドット */}
     <div className="absolute left-0 top-2 w-4 h-4 md:w-[1.5vw] md:h-[1.5vw] bg-[#FF8C00] rounded-full -translate-x-1/2 shadow-sm group-hover:scale-125 transition-transform" />
     
     <div className="flex flex-col gap-1">
-      {/* 文字サイズ：スマホでは固定(text-sm/lg)、PCでvwに切り替え */}
       <h3 className="text-sm md:text-[1.2vw] font-black text-slate-400 font-mono">
         {period}
       </h3>
@@ -58,22 +70,38 @@ const TimelineItem = ({ period, title, description }: TimelineItemData) => (
       <p className="mt-2 md:mt-[1vw] text-sm md:text-[1.1vw] text-slate-600 leading-relaxed max-w-prose">
         {description}
       </p>
+
+      {/* 🌟 リンク配列が存在し、中身がある場合のみループ処理で描画 */}
+      {links && links.length > 0 && (
+        <div className="mt-3 md:mt-[0.8vw] flex flex-col gap-1.5">
+          {links.map((link, idx) => (
+            <div key={idx}>
+              <a 
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs md:text-[1vw] font-bold text-slate-500 hover:text-slate-800 transition-colors underline underline-offset-4 decoration-slate-300 hover:decoration-slate-600"
+              >
+                {link.text} ↗
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 );
 
 export default function AboutSection() {
     return (
-        <section id="about" className={`w-full ${DESIGN.layout.containerMargin}`}>
-            <div className={`${DESIGN.layout.containerMargin}`}>
+        <section id="about" className={`w-full md:mx-[5vw]`}>
+            <div className={`pl-6 md:mx-[5vw]`}>
                 <SectionHeader title="About Me" subTitle="自己紹介" />
 
-                {/* flex-col (スマホ) から flex-row (PC) へ切り替え */}
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16">
                     
                     {/* --- 上(スマホ)/左(PC)：自己紹介欄 --- */}
                     <div className="w-full md:w-1/2 space-y-8 pr-5">
-                        {/* 画像サイズをスマホでは少し大きく、中央寄せ気味にする工夫 */}
                         <div className="w-48 h-48 md:w-[24vw] md:h-[24vw] rounded-3xl overflow-hidden shadow-xl ring-8 ring-slate-50">
                             <img src={yourImage} alt="Me" className="w-full h-full object-cover" />
                         </div>
@@ -88,7 +116,7 @@ export default function AboutSection() {
 
                             <div className="grid">
                                 {PROFILE_DATA.map((item) => (
-                                    <div key={item.label} className="">
+                                    <div key={item.label} className="pb-3">
                                         <p className="font-black text-xs md:text-[1vw] uppercase" style={{ color: DESIGN.colors.primary }}>
                                             {item.label}
                                         </p>
@@ -103,7 +131,6 @@ export default function AboutSection() {
 
                     {/* --- 下(スマホ)/右(PC)：研究欄 --- */}
                     <div className="w-full md:w-1/2 pt-4 pr-4 md:pt-2 md:pr-15">
-                        {/* スマホで見るときに、ここが「研究の履歴」だとわかるように小さな見出しがあってもいいですね */}
                         <p className="md:hidden text-xs font-bold text-slate-400 mb-6 tracking-[0.2em] uppercase">
                             —— Research Timeline ——
                         </p>

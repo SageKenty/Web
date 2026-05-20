@@ -37,7 +37,7 @@ const Hero = () => {
             Hanz <span style={{ color: DESIGN.colors.primary }}>ON</span>
           </h1>
           <p className={subTitleStyle}>
-            SAGEポートフォリオサイト
+            関川 謙人 自己紹介サイト
           </p>
         </div>
 

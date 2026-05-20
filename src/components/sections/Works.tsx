@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'; // ページ遷移用のコンポーネント
 import { DESIGN } from '../../constants/design';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Badge } from '../ui/Badge';
-import { ArrowRight, ChevronUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import '../../App.css';
 import firebit from '../../assets/firebit.jpg';
 
@@ -23,7 +24,7 @@ const portfolioData: PortfolioItem[] = [
   { id: 4, tag: "工事中", title: "Fourth Work", desc: "工事中", status: "Completed", img: firebit, link: "https://example.com" },
 ];
 
-const PortfolioCard = ({ item, index, isExpanded }: { item: PortfolioItem; index: number; isExpanded: boolean }) => {
+const PortfolioCard = ({ item }: { item: PortfolioItem }) => {
   const statusColor = item.status === "Completed" 
     ? DESIGN.colors.status.completed 
     : DESIGN.colors.status.inProgress;
@@ -32,17 +33,13 @@ const PortfolioCard = ({ item, index, isExpanded }: { item: PortfolioItem; index
     <a 
       href={item.link} 
       className={`
-        /* 💡 PC(md以上)では常にflex。スマホでは全件表示中(isExpanded)か2枚目までならflex、それ以外はhidden */
-        ${index >= 2 ? (isExpanded ? 'flex md:flex' : 'hidden md:flex') : 'flex'}
-        flex-row md:flex-col
+        flex flex-row md:flex-col
         w-full md:w-[calc((100%-4vw)/3)] 
-        shrink-0 bg-slate-50 ${DESIGN.radius.card} 
+        bg-slate-50 ${DESIGN.radius.card} 
         overflow-hidden
         shadow-[4px_4px_0px_rgba(0,0,0,0.1)] md:shadow-[6px_6px_0px_rgba(0,0,0,0.15)]
         active:scale-[0.98]
         hover:translate-x-0 hover:translate-y-0 hover:shadow-none transition-all duration-150
-        /* スマホかつ展開時のみフェードインアニメーションを適用 */
-        ${index >= 2 && isExpanded ? 'animate-fade-in' : ''}
       `}
     >
       {/* 画像エリア */}
@@ -79,38 +76,30 @@ const PortfolioCard = ({ item, index, isExpanded }: { item: PortfolioItem; index
 };
 
 export default function PortfolioSection() {
-  const [isExpanded, setIsExpanded] = useState(false);
+  // 配列から「最初の3件」だけを取り出す
+  const displayedWorks = portfolioData.slice(0, 3);
 
   return (
     <section id="works" className={`w-full ${DESIGN.layout.sectionPadding}`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-[10vw]">
         <SectionHeader title="Proof Of Work" subTitle="制作事例" />
         
-        {/* コンテナ：元のクラス構成に戻し、PCでのflex挙動（横スクロール）に影響を与えないように修正 */}
-        <div className="grid grid-cols-1 gap-5 md:display-inherit md:flex md:flex-nowrap md:overflow-x-auto md:gap-[2vw] md:pb-8 custom-scrollbar">
-          {portfolioData.map((item, index) => (
-            <PortfolioCard key={item.id} item={item} index={index} isExpanded={isExpanded} />
+        {/* コンテナ：スクロールバー(overflow-x-auto, custom-scrollbar)を完全に排除 */}
+        <div className="flex flex-col md:flex-row gap-5 md:gap-[2vw]">
+          {displayedWorks.map((item) => (
+            <PortfolioCard key={item.id} item={item} />
           ))}
         </div>
 
-        {/* スマホ専用：「もっと見る / 閉じる」ボタン */}
-        <div className="mt-10 flex justify-center md:hidden">
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-lg active:scale-95 transition-transform"
+        {/* 一覧ページへの導線ボタン */}
+        <div className="mt-10 flex justify-center">
+          <Link 
+            to="/works"
+            className="flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-lg hover:bg-slate-800 active:scale-95 transition-all duration-150 text-sm md:text-base"
           >
-            {isExpanded ? (
-              <>
-                Close Works
-                <ChevronUp size={20} />
-              </>
-            ) : (
-              <>
-                View All Works
-                <ArrowRight size={20} />
-              </>
-            )}
-          </button>
+            View All Works
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </section>

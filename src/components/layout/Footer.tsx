@@ -15,17 +15,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* ナビゲーションセクション */}
-        <nav>
-            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-10">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.name}>
-                  <NavLink item={item} className="text-sm md:text-[1.2vw]" />
-                </li>
-              ))}
-            </ul>
-        </nav>
-
         {/* SNSセクション */}
         <div className="flex gap-5">
           {SNS_ITEMS.map((sns) => (
@@ -41,12 +30,23 @@ export const Footer = () => {
           ))}
         </div>
 
-      </div>
-
-      {/* コピーライト（おまけ） */}
-      <div className="mt-12 text-center text-[10px] text-gray-400 tracking-widest uppercase">
+        {/* コピーライト（おまけ） */}
+      <div className="text-center text-[10px] text-gray-400 tracking-widest uppercase">
         © {new Date().getFullYear()} Sekigawa Kento. All rights reserved.
       </div>
+
+        {/* ナビゲーションセクション */}
+        <nav>
+            <ul className="hidden md:flex flex-wrap justify-center gap-x-6 gap-y-4 md:gap-10">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.name}>
+                  <NavLink item={item} className="text-sm md:text-[1.2vw]" />
+                </li>
+              ))}
+            </ul>
+        </nav>
+      </div>
+
     </footer>
   );
 };
