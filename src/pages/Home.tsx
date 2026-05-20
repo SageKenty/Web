@@ -17,7 +17,7 @@ export default function Home() {
         <PortfolioSection />
         <BlogSection />
         <About />
-        <Skill />
+        {/*<Skill />*/}
     </main>
     <Footer />
     </div>

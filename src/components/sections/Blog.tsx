@@ -80,12 +80,7 @@ export default function BlogSection() {
           <a 
             href="/blog"
             className="
-              flex items-center gap-2 
-              px-10 py-4 
-              bg-slate-900 text-white 
-              rounded-full font-black text-sm md:text-base
-              shadow-lg hover:shadow-orange-500/20 hover:-translate-y-0.5
-              active:scale-95 transition-all
+              flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-lg hover:bg-slate-800 active:scale-95 transition-all duration-150 text-sm md:text-base
             "
           >
             View ALL LOGS
