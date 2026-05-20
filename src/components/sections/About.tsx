@@ -72,7 +72,7 @@ export default function AboutSection() {
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16">
                     
                     {/* --- 上(スマホ)/左(PC)：自己紹介欄 --- */}
-                    <div className="w-full md:w-1/2 space-y-8">
+                    <div className="w-full md:w-1/2 space-y-8 pr-5">
                         {/* 画像サイズをスマホでは少し大きく、中央寄せ気味にする工夫 */}
                         <div className="w-48 h-48 md:w-[24vw] md:h-[24vw] rounded-3xl overflow-hidden shadow-xl ring-8 ring-slate-50">
                             <img src={yourImage} alt="Me" className="w-full h-full object-cover" />
@@ -102,12 +102,12 @@ export default function AboutSection() {
                     </div>
 
                     {/* --- 下(スマホ)/右(PC)：研究欄 --- */}
-                    <div className="w-full md:w-1/2 pt-4 md:pt-2">
+                    <div className="w-full md:w-1/2 pt-4 pr-4 md:pt-2 md:pr-15">
                         {/* スマホで見るときに、ここが「研究の履歴」だとわかるように小さな見出しがあってもいいですね */}
-                        <p className="md:hidden text-xs font-bold text-slate-400 mb-6 tracking-[0.2em] uppercase text-center">
+                        <p className="md:hidden text-xs font-bold text-slate-400 mb-6 tracking-[0.2em] uppercase">
                             —— Research Timeline ——
                         </p>
-                        <div className="max-w-md mx-auto md:max-w-none">
+                        <div className="max-w-md md:max-w-none">
                             {TIMELINE_DATA.map((item, index) => (
                               <TimelineItem key={index} {...item} />
                             ))}
