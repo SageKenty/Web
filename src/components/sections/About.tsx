@@ -18,24 +18,24 @@ export interface TimelineItemData {
 export const PROFILE_DATA: ProfileItem[] = [
   { label: "AGE / GENDER", content: "22歳 / 男性" },
   { label: "SPEC", content: "北九州市立大学 国際環境工学研究科 情報工学専攻 修士1年" },
-  { label: "COMMENT", content: "Society 5.0の実現に向けたブロックチェーン技術とネットワークインフラの研究に従事。技術を『触って理解する』ことを信条にしています。" },
+  { label: "COMMENT", content: "Blockchainをセキュリティ、ネットワークなど幅広い視点を持ちながら研究しています。ユーモアを大事にしつつ、実践学習、ハンズオンを大事にした学習に取り組む意図で少し誤字を入れたHanzOnを掲げてます。" },
 ];
 
 export const TIMELINE_DATA: TimelineItemData[] = [
   {
     period: "Coursework",
     title: "学部1-3年",
-    description: "情報工学の基礎を習得。プログラミング、ネットワーク、セキュリティの概論を学び、理論と実装の基礎を固めた時期。"
+    description: "基礎力や実装力を上げるために必死で実習や課題、プログラミングサークルでの活動に尽力しました。"
   },
   {
     period: "Bachelor",
     title: "学士研究",
-    description: "C2PAとブロックチェーンを組み合わせたコンテンツの真正性担保に関する研究。国内学会での発表・受賞を経験。"
+    description: "情報指向ネットワーク(ICN)の信頼性をBlockchainで保つICNとDPKIの実装を行い。成果を2026年3月、IEICE総合大会学生ポスターセッションにて発表。ポスター優秀賞を受賞しました。"
   },
   {
     period: "Master",
     title: "修士研究",
-    description: " Society 5.0 における自律分散型インフラの研究。ハイパーレジャーファブリックを用いた実証実験を計画中。"
+    description: " まだわかりませんが、Blockchainで何らかの社会貢献ができたらなと考えています。"
   },
 ];
 
@@ -82,7 +82,7 @@ export default function AboutSection() {
                             <div>
                                 <h3 className="text-3xl md:text-[3.5vw] font-black text-slate-800 leading-tight">
                                     関川 謙人 <br />
-                                    <span className="text-xl md:text-[2vw] text-slate-400 font-medium">Sekigawa Kento</span>
+                                    <span className="text-xl md:text-[2vw] text-slate-400 font-medium">Kento Sekigawa</span>
                                 </h3>
                             </div>
 
