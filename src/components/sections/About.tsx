@@ -48,7 +48,7 @@ export const TIMELINE_DATA: TimelineItemData[] = [
   {
     period: "Master",
     title: "修士研究",
-    description: "Blockchainで何らかの社会貢献ができたらなと考えています。また、ICCE TWでの採択及び発表を目標にしています。"
+    description: "上原研究室に所属しています。Blockchainで何らかの社会貢献ができたらなと考えています。また、ICCE TWでの採択及び発表を目標にしています。"
   },
 ];
 
