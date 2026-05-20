@@ -17,10 +17,10 @@ interface PortfolioItem {
 }
 
 const portfolioData: PortfolioItem[] = [
-  { id: 1, tag: "Web Design", title: "Firebit Project", desc: "説明文が入ります。", status: "Completed", img: firebit, link: "https://example.com" },
-  { id: 2, tag: "App Dev", title: "Second Work", desc: "Figmaから逆算中。", status: "In Progress", img: firebit, link: "https://example.com" },
-  { id: 3, tag: "UI/UX", title: "Third Work", desc: "ポートフォリオ欄。", status: "Completed", img: firebit, link: "https://example.com" },
-  { id: 4, tag: "Blockchain", title: "Fourth Work", desc: "Proof of Work.", status: "Completed", img: firebit, link: "https://example.com" },
+  { id: 1, tag: "工事中", title: "全て工事中", desc: "説明文が入ります。", status: "Completed", img: firebit, link: "https://example.com" },
+  { id: 2, tag: "工事中", title: "Second Work", desc: "工事中", status: "In Progress", img: firebit, link: "https://example.com" },
+  { id: 3, tag: "工事中", title: "Third Work", desc: "工事中", status: "Completed", img: firebit, link: "https://example.com" },
+  { id: 4, tag: "工事中", title: "Fourth Work", desc: "工事中", status: "Completed", img: firebit, link: "https://example.com" },
 ];
 
 const PortfolioCard = ({ item, index, isExpanded }: { item: PortfolioItem; index: number; isExpanded: boolean }) => {

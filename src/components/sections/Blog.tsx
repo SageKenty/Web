@@ -14,11 +14,11 @@ interface BlogItem {
 }   
 
 const blogData = [
-  { id: 1, date: "2026.04.27", tag: "Tech", title: "C2PAを用いたコンテンツ証明の検討" },
-  { id: 2, date: "2026.04.20", tag: "Lab", title: "修士1年、研究テーマが決まるまで" },
-  { id: 3, date: "2026.04.15", tag: "Game", title: "最近ハマっているイナイレラフビルド構築" },
-  { id: 4, date: "2026.04.10", tag: "Tech", title: "React + Tailwind v4 で作るポートフォリオ" },
-  { id: 5, date: "2026.04.05", tag: "Daily", title: "北九州での生活と開発環境" },
+  { id: 1, date: "2026.04.27", tag: "Tech", title: "工事中" },
+  { id: 2, date: "2026.04.20", tag: "Lab", title: "工事中" },
+  { id: 3, date: "2026.04.15", tag: "Game", title: "工事中" },
+  { id: 4, date: "2026.04.10", tag: "Tech", title: "工事中" },
+  { id: 5, date: "2026.04.05", tag: "Daily", title: "工事中" },
 ];
 
 const BlogItem = ({ blog }: { blog: BlogItem }) => (
