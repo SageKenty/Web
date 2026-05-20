@@ -1,12 +1,15 @@
+import { useNavigate } from 'react-router-dom';
+
 import { DESIGN } from '../../constants/design';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Badge } from '../ui/Badge';
 import { ArrowRight } from 'lucide-react'; // 矢印アイコン
 
+
 interface BlogItem {
   id: number;
   date: string;
-  tag: string;
+  tag : string;
   title: string;
 }   
 
@@ -60,10 +63,11 @@ const BlogItem = ({ blog }: { blog: BlogItem }) => (
 );
 
 export default function BlogSection() {
+
   return (
     <section id="blog" className={`w-full ${DESIGN.layout.sectionPadding}`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-[10vw]">
-        <SectionHeader title="Training Log" subTitle="ブログ" />
+        <SectionHeader title="Recent Log" subTitle="最近のブログ" />
         
         <div className={`flex flex-col border-t ${DESIGN.colors.borderBase} mt-8`}>
           {blogData.map((blog) => (
