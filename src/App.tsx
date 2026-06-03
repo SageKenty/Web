@@ -1,19 +1,24 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// 1. BrowserRouter を追加でインポート
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
-//import BlogPage from './pages/BlogPage';
+import BlogPage from './pages/BlogPage';
+import WorksPage from './pages/WorksPage';
+import BlogPost from './pages/BlogPost'; // ブログの詳細ページ（動的ルーティング）
+import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
   return (
-    // 2. 全体を BrowserRouter で囲む
     <BrowserRouter>
+      {/* ナビゲーション（全ページ共通） */}
+      <ScrollToTop />
+      {/* URLに応じて中身が切り替わるエリア */}
       <Routes>
-        {/* 3. トップページは空文字ではなく "/" を指定するのが一般的 */}
         <Route path="/" element={<Home />} />
-
-        {/* 4. パス名はURLになるので、慣習的に小文字の "/blog" などが推奨されます */}
-        {/* <Route path="/blog" element={<BlogPage />} />*/}
+        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/works" element={<WorksPage />} />
+        <Route path="/blogs/:id" element={<BlogPost />} /> {/* 動的ルーティング */}
       </Routes>
     </BrowserRouter>
   );
