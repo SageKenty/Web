@@ -8,7 +8,6 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const SNS_ITEMS = [
-  { name: 'X', href: 'https://twitter.com/yourid' },
-  { name: 'GitHub', href: 'https://github.com/yourid' },
-  { name: 'Instagram', href: 'https://instagram.com/yourid' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/kentosekigawa/' },
+  { name: 'GitHub', href: 'https://github.com/SageKenty/' },
 ] as const;
