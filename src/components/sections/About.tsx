@@ -96,7 +96,7 @@ export default function AboutSection() {
     return (
         <section id="about" className={`w-full md:mx-[5vw]`}>
             <div className={`pl-6 md:mx-[5vw]`}>
-                <SectionHeader title="About Me" subTitle="自己紹介" />
+                <SectionHeader title="About Me" subTitle="関川謙人 自己紹介" />
 
                 <div className="flex flex-col md:flex-row gap-12 md:gap-16">
                     
@@ -105,6 +105,7 @@ export default function AboutSection() {
                         <div className="w-48 h-48 md:w-[24vw] md:h-[24vw] rounded-3xl overflow-hidden shadow-xl ring-8 ring-slate-50">
                             <img src={yourImage} alt="Me" className="w-full h-full object-cover" />
                         </div>
+
 
                         <div className="space-y-6">
                             <div>
