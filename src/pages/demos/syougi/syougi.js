@@ -67,12 +67,12 @@ export default class Syougi {
     this.loader = new GLTFLoader();
     //GLTFファイルのパス指定
     //将棋盤のモデルデータを読み込む
-    this.board_glb = await this.loader.loadAsync(`/public/assets/Shogi/models/Board.glb`);
+    this.board_glb = await this.loader.loadAsync(`/assets/Shogi/models/Board.glb`);
     console.log(this.board_glb);
     //駒置きのモデルデータを読み込む
-    this.komaoki_glb = await this.loader.loadAsync(`/public/assets/Shogi/models/Komadai.glb`);
+    this.komaoki_glb = await this.loader.loadAsync(`/assets/Shogi/models/Komadai.glb`);
     //ステージのモデルデータを読みこむ
-    this.stage_glb = await this.loader.loadAsync(`/public/assets/Shogi/models/stage.glb`);
+    this.stage_glb = await this.loader.loadAsync(`/assets/Shogi/models/stage.glb`);
     //読み込み後に3D空間に追加
     this.board = this.board_glb.scene
     //駒置きのモデルデータをコピー
@@ -854,56 +854,56 @@ export default class Syougi {
           switch (glb_kind) {
             //kindの値によってモデルのパスを読み込む
             case 0:
-              if (!loaded[0]) { glbs[0] = await this.loader.loadAsync(`/public/assets/Shogi/models/osho.glb`); }
+              if (!loaded[0]) { glbs[0] = await this.loader.loadAsync(`/assets/Shogi/models/osho.glb`); }
               name = "gyoku"
               size = 5
               loaded[0] = true
               debuff = 3.4
               break;
             case 1:
-              if (!loaded[1]) { glbs[1] = await this.loader.loadAsync(`/public/assets/Shogi/models/hisha.glb`); }
+              if (!loaded[1]) { glbs[1] = await this.loader.loadAsync(`/assets/Shogi/models/hisha.glb`); }
               name = "hisya"
               size = 5;
               loaded[1] = true;
               debuff = 3.4
               break;
             case 2:
-              if (!loaded[2]) { glbs[2] = await this.loader.loadAsync(`/public/assets/Shogi/models/kakugyo.glb`); }
+              if (!loaded[2]) { glbs[2] = await this.loader.loadAsync(`/assets/Shogi/models/kakugyo.glb`); }
               name = "kakugyo"
               size = 5;
               loaded[2] = true;
               debuff = 3.4
               break;
             case 3:
-              if (!loaded[3]) { glbs[3] = await this.loader.loadAsync(`/public/assets/Shogi/models/kinsho.glb`); }
+              if (!loaded[3]) { glbs[3] = await this.loader.loadAsync(`/assets/Shogi/models/kinsho.glb`); }
               name = "kinsho"
               size = 4.8;
               loaded[3] = true;
               debuff = 2.7
               break;
             case 4:
-              if (!loaded[4]) { glbs[4] = await this.loader.loadAsync(`/public/assets/Shogi/models/ginsho.glb`); }
+              if (!loaded[4]) { glbs[4] = await this.loader.loadAsync(`/assets/Shogi/models/ginsho.glb`); }
               name = "ginsho"
               size = 4.8;
               loaded[4] = true;
               debuff = 2.7
               break;
             case 5:
-              if (!loaded[5]) { glbs[5] = await this.loader.loadAsync(`/public/assets/Shogi/models/keima.glb`); }
+              if (!loaded[5]) { glbs[5] = await this.loader.loadAsync(`/assets/Shogi/models/keima.glb`); }
               name = "keima"
               size = 4.6;
               loaded[5] = true;
               debuff = 2.4
               break;
             case 6:
-              if (!loaded[6]) { glbs[6] = await this.loader.loadAsync(`/public/assets/Shogi/models/kyosha.glb`); }
+              if (!loaded[6]) { glbs[6] = await this.loader.loadAsync(`/assets/Shogi/models/kyosha.glb`); }
               name = "kyosha"
               size = 4.6;
               loaded[6] = true;
               debuff = 2.4
               break;
             case 7:
-              if (!loaded[7]) { glbs[7] = await this.loader.loadAsync(`/public/assets/Shogi/models/huhyo.glb`); }
+              if (!loaded[7]) { glbs[7] = await this.loader.loadAsync(`/assets/Shogi/models/huhyo.glb`); }
               name = "huhyo"
               size = 4.3;
               loaded[7] = true;
