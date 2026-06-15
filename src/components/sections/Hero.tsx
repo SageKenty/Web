@@ -1,6 +1,6 @@
 import React from 'react';
 import { DESIGN } from '../../constants/design';
-import citelogo from '../../assets/Hanz-on.webp';
+import citelogo from '/assets/Hanz-on.webp';
 
 // 装飾用パーツの調整：スマホでは少し控えめにするか、位置を調整
 const DecorativeArc = ({ position }: { position: 'left' | 'right' }) => {

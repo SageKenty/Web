@@ -64,7 +64,6 @@ const BlogPost = () => {
       <Header />
       <div className="min-h-screen bg-white pt-28 pb-20">
         <article className="max-w-4xl mx-auto px-6">
-          
           {/* 上部ナビ */}
           <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-orange-500 transition-colors mb-10">
             <ArrowLeft size={16} /> Back to Articles
@@ -78,7 +77,7 @@ const BlogPost = () => {
             </div>
             <h1 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">{blog.title}</h1>
           </header>
-
+          
           {/* 本文エリア */}
           {isLoading ? (
             <div className="py-10 text-center text-slate-400 font-mono text-sm animate-pulse">Loading content...</div>

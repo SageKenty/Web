@@ -5,7 +5,7 @@ import { SectionHeader } from '../ui/SectionHeader';
 import { Badge } from '../ui/Badge';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import '../../App.css';
-import firebit from '../../assets/firebit.jpg';
+import firebit from '/assets/firebit.jpg';
 import { portfolioData } from '../../constants/portfolio';
 import type { PortfolioItem } from '../../constants/portfolio';
 

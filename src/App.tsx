@@ -7,6 +7,7 @@ import BlogPage from './pages/BlogPage';
 import WorksPage from './pages/WorksPage';
 import BlogPost from './pages/BlogPost'; // ブログの詳細ページ（動的ルーティング）
 import ScrollToTop from './components/utils/ScrollToTop';
+import ShogiDemo from './pages/demos/ShogiDemo'; // デモページのインポート
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/works" element={<WorksPage />} />
         <Route path="/blogs/:id" element={<BlogPost />} /> {/* 動的ルーティング */}
+        {/* デモページのルートもここで追加 */}
+        <Route path="/demos/shogi" element={<ShogiDemo />} />
+        
       </Routes>
     </BrowserRouter>
   );

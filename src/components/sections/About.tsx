@@ -1,6 +1,6 @@
 import { SectionHeader } from "../ui/SectionHeader"
 import { DESIGN } from "../../constants/design"
-import yourImage from "../../assets/Hanz-on.webp"
+import yourImage from "/assets/Hanz-on.webp"
 
 // プロフィールの型定義
 export interface ProfileItem {

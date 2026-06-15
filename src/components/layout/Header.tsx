@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DESIGN } from '../../constants/design';
-import logoImg from '../../assets/Hanz-on_50.webp'; 
+import logoImg from '/assets/Hanz-on_50.webp'; 
 import { Menu, X } from 'lucide-react'; // アイコンライブラリ（lucide-react）を想定。なければ三本線で代用可
 import {NAV_ITEMS} from '../../constants/navigation';
 import {NavLink} from '../ui/NavLink';
