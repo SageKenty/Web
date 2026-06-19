@@ -2,11 +2,11 @@
 import React, { useState, useEffect, useRef} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
-import Header from '../../components/layout/Header.js';
-import {Footer} from '../../components/layout/Footer.js';
+import Header from '../../../components/layout/Header.js';
+import {Footer} from '../../../components/layout/Footer.js';
 import * as THREE from "three";
 // @ts-ignore
-import Syougi from "./syougi/syougi"; 
+import Syougi from "./syougi.js"; 
  // 3Dモデルのパス
 
 export default function ShogiDemo() {

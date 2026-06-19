@@ -72,7 +72,7 @@ const WorksPage = () => {
           <div className="max-w-[1400px] mx-auto">
             
             {/* 💡 ココがポイント：親要素で横並び、はみ出し（3枚超）は flex-wrap で綺麗に下の行に落とす設定 */}
-            <div className="flex flex-col md:flex-row flex-wrap gap-5 md:gap-y-[4vw] md:gap-x-[2vw]">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-[2vw] flex-wrap">
               {filteredWorks.map((item) => (
                 // 提示されたコードから「1ミリも仕様を変えていない」PortfolioCardをそのまま配置してループ
                 <PortfolioCard key={item.id} item={item} />

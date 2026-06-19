@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="81.83107mm"
+   height="71.291199mm"
+   viewBox="0 0 81.83107 71.291199"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="doghead.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.61977224"
+     inkscape:cx="60.506099"
+     inkscape:cy="399.34025"
+     inkscape:window-width="1470"
+     inkscape:window-height="890"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-44.251838,-41.530715)">
+    <path
+       style="fill:#ff5555;stroke:#ff2a2a;stroke-width:2;stroke-linejoin:bevel;stroke-opacity:1"
+       d="m 61.474196,42.263508 -16.222357,17.929975 -10e-7,32.87162 14.087837,-16.649262 C 66.3637,96.410774 66.688224,102.38408 86.234636,111.84889 100.03787,108.57596 107.92977,97.943043 112.27579,76.415841 L 125.08291,90.93058 V 60.193483 L 111.84888,42.26351 102.03009,53.363018 H 73.427512 Z"
+       id="path1"
+       sodipodi:nodetypes="cccccccccccc" />
+  </g>
+</svg>

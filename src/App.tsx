@@ -7,7 +7,8 @@ import BlogPage from './pages/BlogPage';
 import WorksPage from './pages/WorksPage';
 import BlogPost from './pages/BlogPost'; // ブログの詳細ページ（動的ルーティング）
 import ScrollToTop from './components/utils/ScrollToTop';
-import ShogiDemo from './pages/demos/ShogiDemo'; // デモページのインポート
+import ShogiDemo from './pages/demos/syougi/ShogiDemo'; // デモページのインポート
+import ShootingDemo from './pages/demos/shooting/Shooting';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/blogs/:id" element={<BlogPost />} /> {/* 動的ルーティング */}
         {/* デモページのルートもここで追加 */}
         <Route path="/demos/shogi" element={<ShogiDemo />} />
+        <Route path = "/demos/shooting" element={ <ShootingDemo />} />
+        <Route path="*" element={<div>404 Not Found</div>} /> {/* 404ページ */}
         
       </Routes>
     </BrowserRouter>

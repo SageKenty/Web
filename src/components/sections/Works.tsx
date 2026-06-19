@@ -53,7 +53,7 @@ export const PortfolioCard = ({ item }: { item: PortfolioItem }) => {
             {item.title}
           </h3>
 
-          {/* 説明文（PCのみ表示、スマホはすっきりさせるため隠す設定を維持） */}
+          {}
           <p className={`md:block ${DESIGN.colors.textSub} mt-[0.5vw] text-5px md:text-[1vw] line-clamp-2`}>
             {item.desc}
           </p>
