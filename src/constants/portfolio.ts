@@ -18,8 +18,8 @@ export interface PortfolioItem {
 // ➔ すべて「工事中」に書き換え
 export const portfolioData: PortfolioItem[] = [
   { id: 1, tag: "Research", title: "ICNにおけるBlockchainを用いた分散型鍵管理に関する研究", desc: "Demoを押すと学会発表時の講演情報サイトに飛びます。", status: "Completed", img: IcnDpki , demoLink: "https://pub.confit.atlas.jp/ja/event/general2026/presentation/TPO-1-298"},
-  { id: 2, tag: "Portfolio", title: "将棋", desc: "学部3年生の頃に作成した将棋アプリです。3Dモデルは友人が製作、プログラムは私が書きました。デモはUblock Originなど広告ブロッカーが有効である場合動かない可能性が高いです。", status: "Completed", img: ShogiGame, githubLink: "https://github.com/PeaCH-ktq/PeaCH_Game" , demoLink: "/demos/shogi"},
-  { id: 3, tag: "Portfolio", title: "シューティングゲーム", desc: "学部2年生の頃に授業で作成したシューティングゲームです。元のゲームはProcessingで制作していますが、Geminiを利用してp5.jsで再作成し、Reactに移植しています。", status: "Completed", img: shooting , demoLink: "/demos/shooting"},
+  { id: 2, tag: "Portfolio", title: "将棋", desc: "学部3年生の頃に作成した将棋アプリです。3Dモデルは友人が製作、プログラムは私が書きました。デモはUblock Originなど広告ブロッカーが有効である場合動かない可能性が高いです。", status: "Completed", img: ShogiGame, githubLink: "https://github.com/SageKenty/my_works" , demoLink: "/demos/shogi"},
+  { id: 3, tag: "Portfolio", title: "シューティングゲーム", desc: "学部2年生の頃に授業で作成したシューティングゲームです。元のゲームはProcessingで制作していますが、Geminiを利用してp5.jsで再作成し、Reactに移植しています。", status: "Completed", img: shooting , githubLink: "https://github.com/SageKenty/my_works" , demoLink: "/demos/shooting"},
   { id: 4, tag: "Portfolio", title: "本Webサイト", desc: "本WebサイトはFigmaでデザインし、Reactで作成しています。また、Geminiの力を借りています。", status: "In Progress", img: MySite },
   
 ];
